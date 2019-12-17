@@ -1,5 +1,6 @@
 # ucrc
 [![License: GPL](https://img.shields.io/badge/License-GPL-blue)](gnu.org/licenses/gpl-3.0.txt)
+[![Build Status](https://travis-ci.com/sizeofanton/ucrc.svg?branch=master)](https://travis-ci.com/sizeofanton/ucrc)
 
 Python module for calculating CRC check with result as unsigned.
 
