@@ -3,3 +3,5 @@
 /.pypirc
 *.iml
 .DS_Store
+/dist/
+/MANIFEST
