@@ -1,5 +1,5 @@
 from ctypes import c_ubyte
-from ucrc.misc import *
+from ucrc.utils import *
 
 
 def crc8(data: bytes, poly=0x1D, init_val=0, final_xor=0, in_ref=False, out_ref=False):

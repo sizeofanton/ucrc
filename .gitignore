@@ -5,3 +5,4 @@
 .DS_Store
 /dist/
 /MANIFEST
+/Tests_ucrc/__pycache__

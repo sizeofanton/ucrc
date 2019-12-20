@@ -1,4 +1,4 @@
-from ucrc.misc import *
+from ucrc.utils import *
 
 
 def test_bytes_to_int():

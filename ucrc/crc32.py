@@ -1,6 +1,6 @@
 from ctypes import c_uint32
 from ctypes import c_ubyte
-from ucrc.misc import *
+from ucrc.utils import *
 
 
 def crc32(data: bytes, poly=0x4C11DB7, init_val=0, final_xor=0, in_ref=False, out_ref=False):
