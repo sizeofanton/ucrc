@@ -1,0 +1,120 @@
+from ucrc import crc16_ccit_zero
+from ucrc import crc16_arc
+from ucrc import crc16_aug_ccitt
+from ucrc import crc16_buypass
+from ucrc import crc16_ccitt_false
+from ucrc import crc16_cdma2000
+from ucrc import crc16_dds_110
+from ucrc import crc16_dect_r
+from ucrc import crc16_dect_x
+from ucrc import crc16_dnp
+from ucrc import crc16_en_13757
+from ucrc import crc16_genibus
+from ucrc import crc16_maxim
+from ucrc import crc16_mcrf4xx
+from ucrc import crc16_riello
+from ucrc import crc16_t10_dif
+from ucrc import crc16_teledisk
+from ucrc import crc16_tms37157
+from ucrc import crc16_usb
+from ucrc import crc16_a
+from ucrc import crc16_kermit
+from ucrc import crc16_modbus
+from ucrc import crc16_x_25
+from ucrc import crc16_xmodem
+
+
+def test_crc16_ccit_zero():
+    assert crc16_ccit_zero(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0xB30A
+
+
+def test_crc16_arc():
+    assert crc16_arc(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0xC04C
+
+
+def test_crc16_aug_ccitt():
+    assert crc16_aug_ccitt(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0x8234
+
+
+def test_crc16_buypass():
+    assert crc16_buypass(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0x4644
+
+
+def test_crc16_ccitt_false():
+    assert crc16_ccitt_false(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0xBD1A
+
+
+def test_crc16_cdma2000():
+    assert crc16_cdma2000(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0x40F0
+
+
+def test_crc16_dds_110():
+    assert crc16_dds_110(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0x4494
+
+
+def test_crc16_dect_r():
+    assert crc16_dect_r(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0xCBDF
+
+
+def test_crc16_dect_x():
+    assert crc16_dect_x(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0xCBDE
+
+
+def test_crc16_dnp():
+    assert crc16_dnp(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0xF992
+
+
+def test_crc16_en_13757():
+    assert crc16_en_13757(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0x5923
+
+
+def test_crc16_genibus():
+    assert crc16_genibus(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0x42E5
+
+
+def test_crc16_maxim():
+    assert crc16_maxim(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0x3FB3
+
+
+def test_crc16_mcrf4xx():
+    assert crc16_mcrf4xx(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0xD335
+
+
+def test_crc16_riello():
+    assert crc16_riello(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0xBF7D
+
+
+def test_crc16_t10_dif():
+    assert crc16_t10_dif(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0x6E12
+
+
+def test_crc16_teledisk():
+    assert crc16_teledisk(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0xF67
+
+
+def test_crc16_tms37157():
+    assert crc16_tms37157(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0x7C71
+
+
+def test_crc16_usb():
+    assert crc16_usb(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0x24B3
+
+
+def test_crc16_a():
+    assert crc16_a(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0xECF6
+
+
+def test_crc16_kermit():
+    assert crc16_kermit(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0xDB45
+
+
+def test_crc16_modbus():
+    assert crc16_modbus(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0xDB4C
+
+
+def test_crc16_x_25():
+    assert crc16_x_25(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0x2CCA
+
+
+def test_crc16_xmodem():
+    assert crc16_xmodem(bytes([0xFF, 0xFE, 0xFA, 0xF0, 0xFF, 0x00])) == 0xB30A

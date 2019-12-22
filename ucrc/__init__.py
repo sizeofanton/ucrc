@@ -17,7 +17,30 @@ from ucrc.crc8_predefines import crc8_wcdma
 from ucrc.crc16 import crc16
 from ucrc.crc16 import crc16_fast
 from ucrc.crc16 import crc16_gen_table
-
+from ucrc.crc16_predefines import crc16_ccit_zero
+from ucrc.crc16_predefines import crc16_arc
+from ucrc.crc16_predefines import crc16_aug_ccitt
+from ucrc.crc16_predefines import crc16_buypass
+from ucrc.crc16_predefines import crc16_ccitt_false
+from ucrc.crc16_predefines import crc16_cdma2000
+from ucrc.crc16_predefines import crc16_dds_110
+from ucrc.crc16_predefines import crc16_dect_r
+from ucrc.crc16_predefines import crc16_dect_x
+from ucrc.crc16_predefines import crc16_dnp
+from ucrc.crc16_predefines import crc16_en_13757
+from ucrc.crc16_predefines import crc16_genibus
+from ucrc.crc16_predefines import crc16_maxim
+from ucrc.crc16_predefines import crc16_mcrf4xx
+from ucrc.crc16_predefines import crc16_riello
+from ucrc.crc16_predefines import crc16_t10_dif
+from ucrc.crc16_predefines import crc16_teledisk
+from ucrc.crc16_predefines import crc16_tms37157
+from ucrc.crc16_predefines import crc16_usb
+from ucrc.crc16_predefines import crc16_a
+from ucrc.crc16_predefines import crc16_kermit
+from ucrc.crc16_predefines import crc16_modbus
+from ucrc.crc16_predefines import crc16_x_25
+from ucrc.crc16_predefines import crc16_xmodem
 
 from ucrc.crc32 import crc32
 from ucrc.crc32 import crc32_fast
