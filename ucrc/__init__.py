@@ -45,3 +45,11 @@ from ucrc.crc16_predefines import crc16_xmodem
 from ucrc.crc32 import crc32
 from ucrc.crc32 import crc32_fast
 from ucrc.crc32 import crc32_gen_table
+from ucrc.crc32_predefines import crc32_bzip2
+from ucrc.crc32_predefines import crc32_c
+from ucrc.crc32_predefines import crc32_d
+from ucrc.crc32_predefines import crc32_mpeg2
+from ucrc.crc32_predefines import crc32_posix
+from ucrc.crc32_predefines import crc32_q
+from ucrc.crc32_predefines import crc32_jamcrc
+from ucrc.crc32_predefines import crc32_xfer

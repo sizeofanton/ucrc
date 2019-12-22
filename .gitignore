@@ -7,3 +7,4 @@
 /MANIFEST
 /Tests_ucrc/__pycache__
 /ucrc/__pycache__
+*.pyc
