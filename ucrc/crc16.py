@@ -1,6 +1,6 @@
 from ctypes import c_ushort
 from ctypes import c_ubyte
-from ucrc.utils import *
+from ucrc.utils import bytes_to_int, ref
 
 
 def crc16(data: bytes, poly=0x8005, init_val=0, final_xor=0, in_ref=False, out_ref=False):
@@ -29,20 +29,15 @@ def crc16(data: bytes, poly=0x8005, init_val=0, final_xor=0, in_ref=False, out_r
         raise TypeError("Expected bool, got %s" % (type(out_ref),))
 
     crc = c_ushort(0) if init_val == 0 else c_ushort(init_val)
-
     if in_ref:
         data = ref(data)
     for b in data:
-
         crc.value ^= c_ushort(b << 8).value
-
-        for i in range(8):
+        for _ in range(8):
             if crc.value & 0x8000 != 0:
                 crc.value = (crc.value << 1) ^ poly
             else:
                 crc.value = crc.value << 1
-
-
     if out_ref:
         crc_bytes = bytes(crc)
         crc_bytes = ref(crc_bytes)
@@ -99,7 +94,7 @@ def crc16_gen_table(poly=0x8005):
     table = [0]*256
     for d in range(256):
         curr_byte = c_ushort(d << 8)
-        for b in range(8):
+        for _ in range(8):
             if curr_byte.value & 0x8000 != 0:
                 curr_byte.value <<= 1
                 curr_byte.value ^= poly

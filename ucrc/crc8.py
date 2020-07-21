@@ -1,5 +1,5 @@
 from ctypes import c_ubyte
-from ucrc.utils import *
+from ucrc.utils import bytes_to_int, ref
 
 
 def crc8(data: bytes, poly=0x1D, init_val=0, final_xor=0, in_ref=False, out_ref=False):
@@ -28,19 +28,15 @@ def crc8(data: bytes, poly=0x1D, init_val=0, final_xor=0, in_ref=False, out_ref=
         raise TypeError("Expected bool, got %s" % (type(out_ref),))
 
     crc = c_ubyte(0) if init_val == 0 else c_ubyte(init_val)
-
     if in_ref:
-
         data = ref(data)
-
     for b in data:
         crc.value ^= b
-        for i in range(8):
+        for _ in range(8):
             if crc.value & 0x80 != 0:
                 crc.value = (crc.value << 1) ^ poly
             else:
                 crc.value = crc.value << 1
-
     if out_ref:
         crc_bytes = bytes(crc)
         crc_bytes = ref(crc_bytes)
@@ -98,7 +94,7 @@ def crc8_gen_table(poly=0x1D):
     table = [0]*256
     for d in range(256):
         curr_byte = c_ubyte(d)
-        for b in range(8):
+        for _ in range(8):
             if curr_byte.value & 0x80 != 0:
                 curr_byte.value <<= 1
                 curr_byte.value ^= poly

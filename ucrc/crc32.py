@@ -1,6 +1,6 @@
 from ctypes import c_uint32
 from ctypes import c_ubyte
-from ucrc.utils import *
+from ucrc.utils import bytes_to_int, ref
 
 
 def crc32(data: bytes, poly=0x4C11DB7, init_val=0, final_xor=0, in_ref=False, out_ref=False):
@@ -29,19 +29,15 @@ def crc32(data: bytes, poly=0x4C11DB7, init_val=0, final_xor=0, in_ref=False, ou
         raise TypeError("Expected bool, got %s" % (type(out_ref),))
 
     crc = c_uint32(0) if init_val == 0 else c_uint32(init_val)
-
     if in_ref:
         data = ref(data)
-
     for b in data:
         crc.value ^= c_uint32(b << 24).value
-
-        for i in range(8):
+        for _ in range(8):
             if crc.value & 0x80000000 != 0:
                 crc.value = crc.value << 1 ^ poly
             else:
                 crc.value = crc.value << 1
-
     if out_ref:
         crc_bytes = bytes(crc)
         crc_bytes = ref(crc_bytes)
@@ -98,7 +94,7 @@ def crc32_gen_table(poly=0x4C11DB7):
     table = [0]*256
     for d in range(256):
         curr_byte = c_uint32(d << 24)
-        for b in range(8):
+        for _ in range(8):
             if curr_byte.value & 0x80000000 != 0:
                 curr_byte.value <<= 1
                 curr_byte.value ^= poly
