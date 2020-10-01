@@ -53,3 +53,5 @@ from ucrc.crc32_predefines import crc32_posix
 from ucrc.crc32_predefines import crc32_q
 from ucrc.crc32_predefines import crc32_jamcrc
 from ucrc.crc32_predefines import crc32_xfer
+
+from ucrc.crc64 import crc64
