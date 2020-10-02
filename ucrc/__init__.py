@@ -55,3 +55,5 @@ from ucrc.crc32_predefines import crc32_jamcrc
 from ucrc.crc32_predefines import crc32_xfer
 
 from ucrc.crc64 import crc64
+from ucrc.crc64 import crc64_fast
+from ucrc.crc64 import crc64_gen_table

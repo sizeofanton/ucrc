@@ -73,7 +73,7 @@ def crc32_fast(data: bytes, table: list, init_val=0, final_xor=0, in_ref=False, 
     if in_ref:
         data = ref(data)
     for b in data:
-        p = c_ubyte((crc.value ^ (b<<24)) >> 24)
+        p = c_ubyte((crc.value ^ (b << 24)) >> 24)
         crc.value = (crc.value << 8) ^ table[p.value]
     if out_ref:
         crc_bytes = bytes(crc)
