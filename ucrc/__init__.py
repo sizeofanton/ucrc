@@ -57,3 +57,7 @@ from ucrc.crc32_predefines import crc32_xfer
 from ucrc.crc64 import crc64
 from ucrc.crc64 import crc64_fast
 from ucrc.crc64 import crc64_gen_table
+from ucrc.crc64_predefines import crc64_ecma_182
+from ucrc.crc64_predefines import crc64_go_iso
+from ucrc.crc64_predefines import crc64_we
+from ucrc.crc64_predefines import crc64_xz
