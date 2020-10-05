@@ -1,6 +1,7 @@
 import ucrc.crc32_tables as TABLES
 from ucrc import crc32_fast
 
+
 def crc32_bzip2(data: bytes):
 
     if not isinstance(data, bytes):
