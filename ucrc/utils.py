@@ -22,7 +22,7 @@ def ref_bits(x):
 
     b = bin(x)[2::].zfill(8)
     b = b[8::-1]
-    return int(b,2)
+    return int(b, 2)
 
 
 def ref(data):
@@ -33,11 +33,10 @@ def ref(data):
     """
 
     tmp = []
-    print(data)
+    # print(data)
     for byte in data:
         byte_r = ref_bits(byte)
         tmp.append(byte_r)
 
     data = bytes(tmp)
     return data
-
